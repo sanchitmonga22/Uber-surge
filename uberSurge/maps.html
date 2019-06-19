@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Google Maps Multiple Markers</title>
+    </head>
+
+<body>
+    <div id="map" style="width: 1500px; height: 700px;"></div>
+    <script  async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAboeogPJrqXU7-LhRIYL3fCZEpSh9_ncI&callback=initMap" type="text/javascript">
+        var lat = 30.714416399999994;
+        var lng = 76.83748829999999;
+        
+
+        let rand=function(min, max) {
+            return Math.random() * (max - min + 1) + min;
+        }
+        var j;
+        var num=2;
+        var coords = new Array();
+        for(j=0;j<num;j++){
+            coords.push({
+                "lat":lat+rand(0.0007,0.0034),
+                "lng":lng+rand(0.0007,0.0034)
+            });
+            coords.push({
+                "lat":lat+rand(-0.0007,-0.0034),
+                "lng":lng+rand(0.0007,0.0034)
+            });
+            coords.push({
+                "lat":lat+rand(0.0007,0.0034),
+                "lng":lng+rand(-0.0007,-0.0034)
+            });
+            coords.push({
+                "lat":lat+rand(-0.0007,-0.0034),
+                "lng":lng+rand(-0.0007,-0.0034)
+            });
+        }
+        var points=[];
+        for(j=0;j<coords.length;j++){
+            points.push(['Random Point', coords[j].lat,coords[j].lng,0]);
+        }
+        console.log("=======",points)
+
+
+        var locations = [
+            ['Netsmartz house', lat, lng, 0], points];
+            console.log(locations.length);
+            
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16,
+            center: new google.maps.LatLng(lat, lng),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+        var infowindow = new google.maps.InfoWindow();
+
+        var marker, i;
+
+        for (i = 0; i < locations.length; i++) {
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                map: map
+            });
+
+            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                return function () {
+                    infowindow.setContent(locations[i][0]);
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
+        }
+        
+    </script>
+       <!-- <script async defer
+       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAboeogPJrqXU7-LhRIYL3fCZEpSh9_ncI&callback=initMap">
+       </script> -->
+    
+</body>
+
+</html>

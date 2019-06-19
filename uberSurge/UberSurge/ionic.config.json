@@ -1,0 +1,8 @@
+{
+  "name": "UberSurge",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

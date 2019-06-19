@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Ionic App</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="scripts/angular.min.js"></script>
+
+  <!--Helper files-->
+  <script src="scripts/uberapilib/Module.js"></script>
+  <script src="scripts/uberapilib/Configuration.js"></script>
+  <script src="scripts/uberapilib/APIHelper.js"></script>
+  <script src="scripts/uberapilib/Http/Client/HttpContext.js"></script>
+  <script src="scripts/uberapilib/Http/Client/RequestClient.js"></script>
+  <script src="scripts/uberapilib/Http/Request/HttpRequest.js"></script>
+  <script src="scripts/uberapilib/Http/Response/HttpResponse.js"></script>
+
+  <!-- API Controllers -->
+  <script src="scripts/uberapilib/Controllers/APIController.js"></script>
+
+
+  <!-- Models -->
+  <script src="scripts/uberapilib/Models/BaseModel.js"></script>
+  <script src="scripts/uberapilib/Models/ProductCollection.js"></script>
+  <script src="scripts/uberapilib/Models/PriceEsitmate.js"></script>
+  <script src="scripts/uberapilib/Models/RequestBody.js"></script>
+  <script src="scripts/uberapilib/Models/RequestDetailsCollections.js"></script>
+  <script src="scripts/uberapilib/Models/Product.js"></script>
+  <script src="scripts/uberapilib/Models/Request.js"></script>
+  <script src="scripts/uberapilib/Models/UserProfile.js"></script>
+  <script src="scripts/uberapilib/Models/Driver.js"></script>
+  <script src="scripts/uberapilib/Models/TimeEstimate.js"></script>
+  <script src="scripts/uberapilib/Models/Vehicle.js"></script>
+  <script src="scripts/uberapilib/Models/UserActivity.js"></script>
+  <script src="scripts/uberapilib/Models/Errors.js"></script>
+  <script src="scripts/uberapilib/Models/History.js"></script>
+  <script src="scripts/uberapilib/Models/PromotionsResponse.js"></script>
+  <script src="scripts/uberapilib/Models/Location.js"></script>
+  <script src="scripts/uberapilib/Models/RequestMapResponse.js"></script>
+  <script src="scripts/uberapilib/Models/SurgeConfirmation.js"></script>
+  <script src="scripts/uberapilib/Models/Meta.js"></script>
+  <script src="scripts/uberapilib/Models/ErrorBase.js"></script>
+  <script src="scripts/uberapilib/Models/TimeEstimateCollection.js"></script>
+  <script src="scripts/uberapilib/Models/PriceEstimateCollection.js"></script>
+
+  <script src="scripts/app.js"></script>
+
+  <base href="/" />
+  <meta name="viewport"
+    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+</head>
+
+<body ng-app="myApp">
+  <div ng-controller="testController"></div>
+  
+  
+  <app-root></app-root>
+    <script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDmayFS0l74jtFkw7iPE_MigNJnbJfYQZ4&sensor=false&v=3.4&libraries=drawing,places,geometry"></script>
+  </body>
+
+</html>
